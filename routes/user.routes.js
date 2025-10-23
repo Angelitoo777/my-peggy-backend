@@ -8,5 +8,5 @@ export const routesOfUser = Router()
 routesOfUser.get('/users', authMiddleware, isAdmin, UserController.getAllUsers)
 routesOfUser.get('/logout', authMiddleware, UserController.logoutUser)
 
-routesOfUser.post('/register', authMiddleware, isAdmin, UserController.register)
+routesOfUser.post('/register', UserController.register)
 routesOfUser.post('/login', UserController.loginUser)
