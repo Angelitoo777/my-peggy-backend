@@ -5,12 +5,14 @@ import { routesOfProduct } from './routes/product.routes.js'
 import { routesOfOrder } from './routes/order.routes.js'
 import { routesOfSettings } from './routes/settings.routes.js'
 import cookieParser from 'cookie-parser'
+import { corsMiddleware } from './middlewares/cors.middleware.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(cookieParser())
+app.use(corsMiddleware)
 
 try {
   await connectMongoDB()
